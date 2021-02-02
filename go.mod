@@ -1,4 +1,4 @@
-module keego
+module github.com/kidy-go/keego
 
 go 1.15
 
