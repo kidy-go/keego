@@ -1,6 +1,6 @@
 // config_test.go kee > 2021/02/01
 
-package conf
+package main
 
 import (
 	"github.com/spf13/cast"

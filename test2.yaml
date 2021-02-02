@@ -1,0 +1,14 @@
+services:
+  test:
+    container_name: test
+    environment:
+      tz: Asia/Shanghai
+    image: test:latest
+    name: test
+    networks:
+    - gin
+    ports:
+    - 80:80
+    volumes:
+    - /opt/test:/opt/test
+version: "3.3"
