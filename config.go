@@ -10,7 +10,7 @@ type Config struct {
 	v *viper.Viper
 }
 
-func New(cPath string, cName string, cType string) *Config {
+func NewConfig(cPath string, cName string, cType string) *Config {
 	v := viper.New()
 	c := &Config{v}
 	c.v.AddConfigPath(cPath)
@@ -29,25 +29,25 @@ func LoadEnv(envPath string, envName ...string) *Config {
 	if len(envName) > 0 {
 		name = envName[0]
 	}
-	c := New(envPath, name, "env")
+	c := NewConfig(envPath, name, "env")
 	c.Viper().AutomaticEnv()
 	return c
 }
 
 func LoadYaml(path, name string) *Config {
-	return New(path, name, "yaml")
+	return NewConfig(path, name, "yaml")
 }
 
 func LoadJson(path, name string) *Config {
-	return New(path, name, "json")
+	return NewConfig(path, name, "json")
 }
 
 func LoadToml(path, name string) *Config {
-	return New(path, name, "toml")
+	return NewConfig(path, name, "toml")
 }
 
 func LoadHCL(path, name string) *Config {
-	return New(path, name, "hcl")
+	return NewConfig(path, name, "hcl")
 }
 
 func (c *Config) Set(key string, value interface{}) {
